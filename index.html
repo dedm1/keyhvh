@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Gear and Key Calculator V3.1</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    p {
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.5;
+    }
+    table {
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #ddd;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    input[type="number"] {
+      width: 80px;
+      padding: 5px;
+      text-align: center;
+      background-color: #eaffea; /* зелёный фон для редактируемых полей */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .note {
+      font-size: 0.9em;
+      color: #555;
+      max-width: 900px;
+      margin: 10px auto;
+    }
+    .instructions {
+      font-size: 1em;
+      font-weight: bold;
+      max-width: 900px;
+      margin: 20px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gear and Key Calculator V3.1</h1>
+  <h2>  Все формулы сделали они @Gmunki   @IAmHappie & @MarioVX  </h2>
+  <p>Введите количество улучшенных предметов для каждой категории. Значения в колонках "Common" и "% Complete" рассчитываются автоматически.</p>
+  
+  <!-- Таблица улучшений -->
+  <table id="gearTable">
+    <thead>
+      <tr>
+        <th>Класс</th>
+        <th>Героический</th>
+        <th>Мефичиский</th>
+        <th>Красные</th>
+        <th>Legendary</th>
+        <th>Фиолетовые</th>
+        <th>Синие</th>
+        <th>Зеленый</th>
+        <th>Серый</th>
+        <th>% Complete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-total="13122">
+        <td>Рыцарь</td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td class="common">13122</td>
+        <td class="percent">0.00%</td>
+      </tr>
+      <tr data-total="13122">
+        <td>Волбника</td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td class="common">13122</td>
+        <td class="percent">0.00%</td>
+      </tr>
+      <tr data-total="13122">
+        <td>Рейнджера</td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td class="common">13122</td>
+        <td class="percent">0.00%</td>
+      </tr>
+      <tr data-total="13122">
+        <td>Блогородный</td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td class="common">13122</td>
+        <td class="percent">0.00%</td>
+      </tr>
+      <tr data-total="13122">
+        <td>Изгоев</td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td><input type="number" value="0" min="0" oninput="updateGearRow(this)"></td>
+        <td class="common">13122</td>
+        <td class="percent">0.00%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Раздел с расчётом ключей -->
+  <h2>Расчёт выпадения ключей</h2>
+  <p class="note">100 – максимум! Редактируйте только зелёные поля, значения можно найти в вашей статистике.</p>
+  
+  <table id="keyTable">
+    <thead>
+      <tr>
+        <th>Тип ключа</th>
+        <th>Личный %</th>
+        <th>Хардмод %</th>
+        <th>Совокупный %</th>
+        <th>Коэффициент</th>
+        <th>Ключи до полного героического</th>
+        <th>Примерное число запусков хардмода</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Серебряный</td>
+        <td><input type="number" value="25" min="0" style="background-color: #eaffea;"></td>
+        <td>25</td>
+        <td>50</td>
+        <td>5</td>
+        <td>19715</td>
+        <td>19715</td>
+      </tr>
+      <tr>
+        <td>Золотой</td>
+        <td><input type="number" value="5" min="0" style="background-color: #eaffea;"></td>
+        <td>25</td>
+        <td>5</td>
+        <td>5:1</td>
+        <td>3943</td>
+        <td>19715</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p class="note">Добавить базовый % хардмода: TRUE. Это число предполагает, что вы выполняете только хардмод запуски, поскольку ежедневные события и режимы с разными героями и сборками дают разный шанс выпадения ключей.</p>
+  <p class="instructions">Как использовать: Сначала заполните таблицу улучшений, затем редактируйте только зелёные поля – эти числа можно найти в вашем обзоре статистики.</p>
+  
+  <script>
+    // Функция обновления строки таблицы улучшений
+    function updateGearRow(element) {
+      var row = element.closest("tr");
+      var inputs = row.querySelectorAll("input[type='number']");
+      var upgradedSum = 0;
+      inputs.forEach(function(input) {
+        upgradedSum += Number(input.value) || 0;
+      });
+      var total = Number(row.getAttribute("data-total"));
+      var common = total - upgradedSum;
+      var percent = (upgradedSum / total) * 100;
+      row.querySelector(".common").textContent = common;
+      row.querySelector(".percent").textContent = percent.toFixed(2) + "%";
+    }
+  </script>
+</body>
+</html>
